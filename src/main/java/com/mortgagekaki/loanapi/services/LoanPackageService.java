@@ -26,8 +26,8 @@ public class LoanPackageService {
      * query the loan package
      * @return list of loan package
      */
-    public List<LoanPackage> query(PackageType type, String propertyType, LoanType loanType) {
-        LoanPackageSpecification specification = new LoanPackageSpecification(type, propertyType, loanType);
+    public List<LoanPackage> query(PackageType type, String propertyType, LoanType loanType, String lockIn) {
+        LoanPackageSpecification specification = new LoanPackageSpecification(type, propertyType, loanType, lockIn);
         return repository.findAll(specification);
     }
 }

@@ -25,8 +25,9 @@ public class LoanPackageController {
     public List<LoanPackage> query(
             @RequestParam(name = "type", required = false) PackageType type,
             @RequestParam(name = "propertyType", required = false) String propertyType,
-            @RequestParam(name = "loanType", required = false) LoanType loanType
+            @RequestParam(name = "loanType", required = false) LoanType loanType,
+            @RequestParam(name = "lockIn", required = false) String lockIn
             ) {
-        return service.query(type, propertyType, loanType);
+        return service.query(type, propertyType, loanType, lockIn);
     }
 }
