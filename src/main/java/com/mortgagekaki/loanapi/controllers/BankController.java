@@ -16,6 +16,9 @@ public class BankController {
         this.bankRepository = bankRepository;
     }
 
+    /**
+     * @return all the bank in database.
+     */
     @GetMapping
     public Iterable<Bank> getBanks() {
         return bankRepository.findAll();

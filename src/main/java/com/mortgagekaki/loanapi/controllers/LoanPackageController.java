@@ -15,12 +15,27 @@ import java.util.List;
 @RequestMapping("/api/v1/packages")
 public class LoanPackageController {
 
+    /**
+     * the service
+     */
     private final LoanPackageService service;
 
+    /**
+     * create an instance of loan package controller
+     * @param service
+     */
     public LoanPackageController(LoanPackageService service) {
         this.service = service;
     }
 
+    /**
+     * Query all loan package using type/property type/loan-type and lockin
+     * @param type the package type
+     * @param propertyType the property type
+     * @param loanType the loan type
+     * @param lockIn whether lock-in or not
+     * @return
+     */
     @GetMapping
     public List<LoanPackage> query(
             @RequestParam(name = "type", required = false) PackageType type,

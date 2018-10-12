@@ -13,11 +13,19 @@ public class EnquiryController {
 
     private final EnquiryService enquiryService;
 
+    /**
+     * create an instance of Enquiry controller
+     * @param enquiryService
+     */
     public EnquiryController(EnquiryService enquiryService) {
         this.enquiryService = enquiryService;
     }
 
-
+    /**
+     * start an enquiry = send emails to user
+     * @param enquiry the enquery body
+     * @return
+     */
     @PostMapping
     public boolean enquiry(@RequestBody LoanEnquiry enquiry) {
         enquiryService.enquiry(enquiry);
