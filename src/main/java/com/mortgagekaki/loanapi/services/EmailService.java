@@ -15,13 +15,9 @@ public class EmailService {
 
     private final String fromAddress;
 
-    private final String ccAddress;
-
     public EmailService(JavaMailSender mailSender,
-                        @Value("${email.from-address}") String fromAddress,
-                        @Value("${email.cc-address}") String ccAddress) {
+                        @Value("${email.from-address}") String fromAddress) {
         this.mailSender = mailSender;
-        this.ccAddress = ccAddress;
         this.fromAddress = fromAddress;
     }
 
@@ -39,7 +35,6 @@ public class EmailService {
     ) {
         SimpleMailMessage message = new SimpleMailMessage();
         message.setFrom(fromAddress);
-        message.setCc(ccAddress);
 
         message.setTo(to);
         message.setSubject(subject);

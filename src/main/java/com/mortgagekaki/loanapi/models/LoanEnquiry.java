@@ -19,6 +19,8 @@ public class LoanEnquiry {
 
     private BigDecimal purchasePrice;
 
+    private BigDecimal loanValue;
+
     private int duration;
 
     private String lockIn;
@@ -125,4 +127,11 @@ public class LoanEnquiry {
         this.propertyType = propertyType;
     }
 
+    public BigDecimal getLoanValue() {
+        return loanValue;
+    }
+
+    public void setLoanValue(BigDecimal loanValue) {
+        this.loanValue = loanValue;
+    }
 }
